@@ -1,0 +1,19 @@
+version: '3.3'
+
+services:
+  web:
+    image: nginx
+    volumes:
+    - ./Users/mikhail/Documents/Code/Mai-Backend/lab6:/etc/nginx/conf.d
+    ports:
+     - "8080:80"
+    environment:
+     - NGINX_PORT=80
+
+volumes:
+  pgdata:
+
+networks:
+  mai-network:
+    driver: "bridge"
+    external: false
